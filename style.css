@@ -1,0 +1,226 @@
+:root{
+  --bg:#0b1220;
+  --panel:#111827;
+  --accent:#f59e0b;
+  --text:#e6eef8;
+  --tile-ground:#6b8e23;
+  --tile-grass:#2e8b57;
+  --tile-water:#1e3a8a;
+  --hp-good: linear-gradient(90deg,#4caf50,#8bc34a);
+  --hp-mid: linear-gradient(90deg,#ffeb3b,#ffc107);
+  --hp-low: linear-gradient(90deg,#f44336,#ff9800);
+}
+
+/* ---------- Base ---------- */
+*{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,Arial;}
+html,body{height:100%}
+body{margin:0;background:linear-gradient(180deg,#071029,#0b1220);color:var(--text);min-height:100vh}
+.scene{padding:16px;position:relative}
+.hidden{display:none}
+h1,h2{margin:8px 0}
+.menu-buttons{display:flex;gap:12px}
+button{background:var(--panel);color:var(--text);border:1px solid #222;padding:8px 12px;border-radius:6px;cursor:pointer}
+button:hover{filter:brightness(1.05)}
+.cards{display:flex;gap:12px;margin:12px 0;flex-wrap:wrap}
+.card{background:#0f1724;padding:10px;border-radius:8px;border:1px solid #223;min-width:180px}
+.card h3{margin:0 0 6px 0}
+.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px}
+
+/* ---------- Map ---------- */
+#map-container{
+  width:640px;
+  height:384px;
+  background:#0b1220;
+  border:6px solid #081226;
+  display:grid;
+  grid-template-columns:repeat(20,1fr);
+  grid-auto-rows:calc(384px/12);
+  gap:1px;
+  margin:0 auto;
+}
+.tile{width:100%;height:100%}
+.tile.ground{background:var(--tile-ground)}
+.tile.grass{background:var(--tile-grass)}
+.tile.water{background:var(--tile-water)}
+
+/* selected / focused tile (восстановление эффекта выделения) */
+.tile.player {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+  box-shadow: 0 0 10px rgba(245,158,11,0.55), inset 0 0 6px rgba(245,158,11,0.12);
+  transition: box-shadow 180ms ease, transform 120ms ease;
+  transform: scale(1.02);
+  z-index: 5;
+}
+.tile.focused {
+  outline: 3px solid var(--accent);
+  box-shadow: 0 0 12px rgba(245,158,11,0.65);
+  transform: scale(1.03);
+  z-index: 6;
+}
+
+/* ---------- Panels ---------- */
+#party-panel,#inventory-panel{background:#071427;padding:8px;border-radius:6px;border:1px solid #123;min-width:180px}
+.battle-side{padding:12px;border:1px solid #223;background:#071427;border-radius:8px;margin:8px}
+#battle-ui{display:flex;gap:12px}
+#battle-actions{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.log{background:#041022;padding:8px;border-radius:6px;height:140px;overflow:auto;border:1px solid #123}
+.small-muted{color:#9fb0c8;font-size:12px}
+
+/* item icons and pickup notice */
+.item-icon {
+  width:20px;
+  height:20px;
+  vertical-align:middle;
+  margin:0 6px 0 8px;
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.6));
+}
+#pickup-notice {
+  color:#bfe6a6;
+  font-size:13px;
+  padding:6px 8px;
+  background:rgba(2,6,23,0.4);
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.03);
+  display:inline-block;
+}
+
+/* ---------- Responsive battle scene ---------- */
+.battle-scene {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+/* arena uses aspect-ratio so it scales with width */
+.arena {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+  border-radius: 8px;
+  border: 6px solid #081226;
+}
+
+/* background image covers arena */
+.arena img#arena-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+/* layer for sprites and effects */
+.battle-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* combatant wrapper */
+.combatant {
+  position: absolute;
+  transform-origin: center bottom;
+  transition: transform 300ms ease, opacity 200ms ease;
+  box-sizing: border-box;
+  width: auto;
+  max-width: 45%;
+  pointer-events: none;
+  opacity: 1; /* явный дефолт, чтобы не было полупрозрачности без класса fainted */
+}
+
+/* Опорные позиции для "кругов" арены — базовые значения */
+#enemy-wrap { left: 66%; top: 14%; transform: translate(-50%, 0) scale(0.78); z-index: 10; }
+#player-wrap { left: 36%; top: 42%; transform: translate(-50%, 0) scale(1.02); z-index: 20; }
+
+/* sprite centering and limits */
+.combatant .sprite {
+  display:block;
+  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 68%;
+  height: auto;
+  image-rendering: pixelated;
+  z-index: 20; /* спрайт под текстом, но над фоном */
+  pointer-events: none;
+}
+
+/* back sprite slightly larger */
+.combatant .sprite.back { max-height: 76%; }
+
+/* info block (name + level) — теперь привязка к нижней границе wrap,
+   чтобы текст всегда располагался над спрайтом и не залезал на него */
+.combatant .info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 6px); /* размещаем над верхом контейнера на 6px */
+  text-align: center;
+  pointer-events: none;
+  z-index: 40; /* выше спрайта и полосы HP */
+  white-space: nowrap;
+  font-size: 14px;
+}
+.combatant .info .name {
+  display: block;
+  font-weight: 700;
+  color: #000;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+.combatant .info .lvl {
+  font-size: 12px;
+  color: #000;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* HP bar and text — полоса под спрайтом, ниже info */
+.hp-bar { position: absolute; left: 50%; transform: translateX(-50%); bottom: -18px; width: 140px; height: 10px; background: #333; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 0 rgba(0,0,0,0.6); z-index: 15; }
+.enemy .hp-bar { width: 120px; bottom: -12px; }
+.hp-fill { height: 100%; width: 100%; background: var(--hp-good); transition: width 400ms linear, background 300ms linear; }
+.combatant .hp-text { position:absolute; left:50%; transform:translateX(-50%); bottom:-34px; font-size:12px; color:#cfe6d0; z-index:30; pointer-events:none; white-space:nowrap; }
+
+/* effects */
+.battle-effects .flash { position:absolute; inset:0; background:rgba(255,255,255,0.6); animation: flash 200ms ease-out; pointer-events:none; }
+@keyframes flash { from { opacity:1 } to { opacity:0 } }
+
+/* shake and lunge animations via classes — не меняют opacity */
+@keyframes shake { 0%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}100%{transform:translateX(0)} }
+.combatant.shake { animation: shake 420ms linear; opacity: 1; }
+.combatant.lunge { transform: translate(-50%, 0) scale(1.08); transition: transform 180ms ease; opacity: 1; }
+
+/* damage float */
+.damage-float { position:absolute; left:50%; top:30%; transform:translateX(-50%); pointer-events:none; z-index:50; }
+.damage-float .num { font-weight:700; color:#fff; text-shadow:0 1px 0 #000; animation: floatUp 900ms ease-out; font-size:20px; }
+@keyframes floatUp { from { transform: translateY(0); opacity:1 } to { transform: translateY(-40px); opacity:0 } }
+
+/* ---------- Battle UI controls: responsive ---------- */
+#battle-ui { display:flex; gap:12px; flex-wrap:wrap; align-items:flex-start; margin-top:8px; }
+#battle-actions { display:flex; gap:8px; margin-top:8px; flex-wrap:wrap; justify-content:center; width:100%; }
+#battle-actions button { flex: 1 1 140px; min-width:120px; max-width:220px; box-sizing:border-box; }
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width:720px) {
+  #map-container { width:100%; height:320px; grid-auto-rows:calc(320px/12); }
+  .card{min-width:140px}
+  .battle-scene { width:100%; padding:6px; }
+  .arena { aspect-ratio:16/9; }
+  .combatant .sprite { max-height:56%; }
+  .combatant .sprite.back { max-height:64%; }
+}
+
+@media (max-width:420px) {
+  #battle-actions button { min-width:100px; padding:6px 8px; font-size:14px; }
+  .combatant .sprite { max-height:50%; }
+  .combatant .sprite.back { max-height:56%; }
+}
+
+/* small utility */
+.hidden-inline { display:none !important; }

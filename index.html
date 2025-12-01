@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pokemon Sapphire Roguelike</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <!-- MENU -->
+  <section id="scene-menu" class="scene">
+    <h1>Pokemon Sapphire Roguelike</h1>
+    <div class="menu-buttons">
+      <button id="btn-new">Новая игра</button>
+      <button id="btn-exit">Выход</button>
+    </div>
+  </section>
+
+  <!-- CHOOSE STARTER -->
+  <section id="scene-choose" class="scene hidden">
+    <h2>Выберите стартера</h2>
+    <div id="starters" class="cards" aria-live="polite"></div>
+    <button id="btn-back-to-menu">Назад</button>
+  </section>
+
+  <!-- WORLD -->
+  <section id="scene-world" class="scene hidden">
+    <div class="topbar">
+      <div id="party-panel" aria-label="Команда игрока"></div>
+      <div>
+        <div id="inventory-panel" aria-label="Инвентарь"></div>
+        <div id="pickup-notice" class="small-muted hidden" style="margin-top:8px"></div>
+      </div>
+    </div>
+
+    <div id="map-container" aria-label="Карта"></div>
+
+    <div class="controls" style="margin-top:12px">
+      <div>Перемещение: стрелки / WASD</div>
+      <button id="btn-new-game-small">Новая игра</button>
+    </div>
+  </section>
+
+  <!-- BATTLE SCENE -->
+  <section id="scene-battle" class="scene hidden" aria-label="Бой">
+    <div id="battle-scene" class="battle-scene hidden" role="region" aria-label="Арена боя">
+      <div class="arena" aria-hidden="false">
+        <img id="arena-bg" src="" alt="Фон арены" />
+        <div id="battle-layer" class="battle-layer">
+          <!-- Enemy wrap (позиционируется через CSS/JS) -->
+          <div id="enemy-wrap" class="combatant enemy" aria-hidden="false">
+            <img id="enemy-sprite" class="sprite" src="" alt="Враг" />
+            <div class="hp-bar"><div class="hp-fill"></div></div>
+            <div class="info" aria-hidden="true"></div>
+            <div class="hp-text" aria-hidden="true"></div>
+          </div>
+
+          <!-- Player wrap (позиционируется через CSS/JS) -->
+          <div id="player-wrap" class="combatant player" aria-hidden="false">
+            <img id="player-sprite" class="sprite back" src="" alt="Игрок" />
+            <div class="hp-bar"><div class="hp-fill"></div></div>
+            <div class="info" aria-hidden="true"></div>
+            <div class="hp-text" aria-hidden="true"></div>
+          </div>
+
+          <div id="battle-effects" class="battle-effects" aria-hidden="true"></div>
+          <div id="damage-float" class="damage-float" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- Optional side UI (kept for accessibility but hidden in battle) -->
+      <div id="battle-ui" class="battle-ui" aria-hidden="true">
+        <div id="battle-enemy" class="battle-side" aria-live="polite"></div>
+        <div id="battle-player" class="battle-side" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div id="battle-actions" class="controls" role="toolbar" aria-label="Действия в бою">
+      <button id="act-attack">Атака</button>
+      <button id="act-run">Бег</button>
+      <button id="act-item">Предметы</button>
+      <button id="act-switch">Сменить</button>
+    </div>
+
+    <!-- Extra area for dynamic buttons (moves, items, switch list) -->
+    <div id="battle-extra" class="hidden" aria-live="polite"></div>
+
+    <!-- Battle log -->
+    <pre id="battle-log" class="log" aria-live="polite"></pre>
+  </section>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
