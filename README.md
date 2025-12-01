@@ -35,6 +35,9 @@
   - Контроль PP: проверка доступности приёма и списание.
   - События: `onUpdate()` для данных, `onVisual(evt)` для анимаций, `onDrop(itemId, qty)`, `onEnd(victory)`.
 - **Действия игрока**: `playerActionAttack(idx)`, `playerActionItem(itemId)`, `playerActionSwitch(slot)`, `playerActionRun()`.
+- **Эффекты предметов**: `potion`, `pp_restore`, `pokeball/greatball`.
+- **Правила лечения**: `min(cur+heal, max)`, без «порога» блокировки (исправлено).
+- **Шансы поимки**: формула по типу мяча и текущему HP врага.
 
 ### `modules/pokemon.js`
 - **Класс Pokemon**: `id`, `name`, `type(s)`, `level`, `currentHP`, `maxHP`, `moves`, `pp` (на уровне приёма).
@@ -50,11 +53,6 @@
 - **Стартовые покемоны**, активный покемон `active`, партия `party`.
 - **Инвентарь**: счётчики предметов, проверка наличия/списание.
 - **Опыт/эволюции**: `giveExpToActive(amount, factory, onEvolve)`.
-
-### `modules/items.js`
-- **Эффекты предметов**: `potion`, `pp_restore`, `pokeball/greatball`.
-- **Правила лечения**: `min(cur+heal, max)`, без «порога» блокировки (исправлено).
-- **Шансы поимки**: формула по типу мяча и текущему HP врага.
 
 ### `data/`
 - `pokemons.json` — id, имена, типы, базовые статы, уровни эволюций.
