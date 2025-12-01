@@ -1,0 +1,330 @@
+[
+  {
+    "id": "torchic",
+    "name": "Torchic",
+    "type": "Fire",
+    "baseStats": { "hp": 45, "atk": 60, "def": 40, "spd": 45 },
+    "moves": [
+      { "id": "scratch", "name": "Scratch", "power": 40, "type": "Normal", "pp": 35 },
+      { "id": "ember", "name": "Ember", "power": 40, "type": "Fire", "pp": 25 }
+    ],
+    "evolution": [ { "level": 16, "to": "combusken" } ]
+  },
+  {
+    "id": "combusken",
+    "name": "Combusken",
+    "type": "Fire",
+    "baseStats": { "hp": 60, "atk": 85, "def": 60, "spd": 55 },
+    "moves": [
+      { "id": "peck", "name": "Peck", "power": 35, "type": "Flying", "pp": 35 },
+      { "id": "doublekick", "name": "Double Kick", "power": 30, "type": "Fighting", "pp": 30 },
+      { "id": "firepunch", "name": "Fire Punch", "power": 75, "type": "Fire", "pp": 15 }
+    ],
+    "evolution": [ { "level": 36, "to": "blaziken" } ]
+  },
+  {
+    "id": "blaziken",
+    "name": "Blaziken",
+    "type": "Fire",
+    "baseStats": { "hp": 80, "atk": 120, "def": 70, "spd": 80 },
+    "moves": [
+      { "id": "flamethrower", "name": "Flamethrower", "power": 90, "type": "Fire", "pp": 15 },
+      { "id": "skyuppercut", "name": "Sky Uppercut", "power": 85, "type": "Fighting", "pp": 15 },
+      { "id": "fireblast", "name": "Fire Blast", "power": 110, "type": "Fire", "pp": 5 },
+      { "id": "protect", "name": "Protect", "power": 0, "type": "Normal", "pp": 10 }
+    ],
+    "evolution": []
+  },
+  {
+    "id": "mudkip",
+    "name": "Mudkip",
+    "type": "Water",
+    "baseStats": { "hp": 50, "atk": 55, "def": 50, "spd": 40 },
+    "moves": [
+      { "id": "tackle", "name": "Tackle", "power": 40, "type": "Normal", "pp": 35 },
+      { "id": "watergun", "name": "Water Gun", "power": 40, "type": "Water", "pp": 25 }
+    ],
+    "evolution": [ { "level": 16, "to": "marshtomp" } ]
+  },
+  {
+    "id": "marshtomp",
+    "name": "Marshtomp",
+    "type": "Water",
+    "baseStats": { "hp": 70, "atk": 85, "def": 70, "spd": 50 },
+    "moves": [
+      { "id": "mudshot", "name": "Mud Shot", "power": 55, "type": "Ground", "pp": 15 },
+      { "id": "rockthrow", "name": "Rock Throw", "power": 50, "type": "Rock", "pp": 15 },
+      { "id": "waterpulse", "name": "Water Pulse", "power": 60, "type": "Water", "pp": 20 }
+    ],
+    "evolution": [ { "level": 36, "to": "swampert" } ]
+  },
+  {
+    "id": "swampert",
+    "name": "Swampert",
+    "type": "Water",
+    "baseStats": { "hp": 100, "atk": 110, "def": 90, "spd": 60 },
+    "moves": [
+      { "id": "earthquake", "name": "Earthquake", "power": 100, "type": "Ground", "pp": 10 },
+      { "id": "surf", "name": "Surf", "power": 90, "type": "Water", "pp": 15 },
+      { "id": "icebeam", "name": "Ice Beam", "power": 90, "type": "Ice", "pp": 10 },
+      { "id": "protect", "name": "Protect", "power": 0, "type": "Normal", "pp": 10 }
+    ],
+    "evolution": []
+  },
+  {
+    "id": "treecko",
+    "name": "Treecko",
+    "type": "Grass",
+    "baseStats": { "hp": 40, "atk": 45, "def": 35, "spd": 70 },
+    "moves": [
+      { "id": "pound", "name": "Pound", "power": 40, "type": "Normal", "pp": 35 },
+      { "id": "absorb", "name": "Absorb", "power": 20, "type": "Grass", "pp": 25 }
+    ],
+    "evolution": [ { "level": 16, "to": "grovyle" } ]
+  },
+  {
+    "id": "grovyle",
+    "name": "Grovyle",
+    "type": "Grass",
+    "baseStats": { "hp": 50, "atk": 65, "def": 45, "spd": 95 },
+    "moves": [
+      { "id": "leafblade", "name": "Leaf Blade", "power": 90, "type": "Grass", "pp": 15 },
+      { "id": "quickattack", "name": "Quick Attack", "power": 40, "type": "Normal", "pp": 30 },
+      { "id": "swordsdance", "name": "Swords Dance", "power": 120, "type": "Normal", "pp": 5 }
+    ],
+    "evolution": [ { "level": 36, "to": "sceptile" } ]
+  },
+  {
+    "id": "sceptile",
+    "name": "Sceptile",
+    "type": "Grass",
+    "baseStats": { "hp": 70, "atk": 85, "def": 65, "spd": 120 },
+    "moves": [
+      { "id": "solarbeam", "name": "Solar Beam", "power": 120, "type": "Grass", "pp": 10 },
+      { "id": "xscissor", "name": "X-Scissor", "power": 80, "type": "Bug", "pp": 15 },
+      { "id": "leafstorm", "name": "Leaf Storm", "power": 130, "type": "Grass", "pp": 5 },
+      { "id": "dragonclaw", "name": "Dragon Claw", "power": 80, "type": "Dragon", "pp": 15 }
+    ],
+    "evolution": []
+  },
+  {
+    "id": "zigzagoon",
+    "name": "Zigzagoon",
+    "type": "Normal",
+    "baseStats": { "hp": 38, "atk": 30, "def": 41, "spd": 60 },
+    "moves": [
+      { "id": "tackle", "name": "Tackle", "power": 40, "type": "Normal", "pp": 35 },
+      { "id": "growl", "name": "Growl", "power": 0, "type": "Normal", "pp": 40 }
+    ],
+    "evolution": [ { "level": 20, "to": "linoone" } ]
+  },
+  {
+    "id": "linoone",
+    "name": "Linoone",
+    "type": "Normal",
+    "baseStats": { "hp": 78, "atk": 70, "def": 61, "spd": 100 },
+    "moves": [
+      { "id": "slash", "name": "Slash", "power": 70, "type": "Normal", "pp": 20 },
+      { "id": "headbutt", "name": "Headbutt", "power": 70, "type": "Normal", "pp": 15 },
+      { "id": "furyswipes", "name": "Fury Swipes", "power": 18, "type": "Normal", "pp": 15 },
+      { "id": "rest", "name": "Rest", "power": 0, "type": "Psychic", "pp": 10 }
+    ],
+    "evolution": []
+  },
+  {
+    "id": "wurmple",
+    "name": "Wurmple",
+    "type": "Bug",
+    "baseStats": { "hp": 20, "atk": 20, "def": 20, "spd": 20 },
+    "moves": [
+      { "id": "tackle", "name": "Tackle", "power": 40, "type": "Normal", "pp": 35 },
+      { "id": "poisonsting", "name": "Poison Sting", "power": 15, "type": "Poison", "pp": 35 }
+    ],
+    "evolution": [
+      { "level": 7, "to": "silcoon", "chance": 0.5 },
+      { "level": 7, "to": "cascoon", "chance": 0.5 }
+    ]
+  },
+  {
+    "id": "silcoon",
+    "name": "Silcoon",
+    "type": "Bug",
+    "baseStats": { "hp": 25, "atk": 15, "def": 30, "spd": 15 },
+    "moves": [
+      { "id": "harden", "name": "Harden", "power": 0, "type": "Normal", "pp": 30 },
+      { "id": "stringshot", "name": "String Shot", "power": 0, "type": "Bug", "pp": 40 },
+      { "id": "tackle", "name": "Tackle", "power": 40, "type": "Normal", "pp": 35 }
+    ],
+    "evolution": [ { "level": 10, "to": "beautifly" } ]
+  },
+  {
+    "id": "cascoon",
+    "name": "Cascoon",
+    "type": "Bug",
+    "baseStats": { "hp": 25, "atk": 15, "def": 30, "spd": 15 },
+    "moves": [
+      { "id": "harden", "name": "Harden", "power": 0, "type": "Normal", "pp": 30 },
+      { "id": "stringshot", "name": "String Shot", "power": 0, "type": "Bug", "pp": 40 },
+      { "id": "tackle", "name": "Tackle", "power": 40, "type": "Normal", "pp": 35 }
+    ],
+    "evolution": [ { "level": 10, "to": "dustox" } ]
+  },
+  {
+    "id": "beautifly",
+    "name": "Beautifly",
+    "type": "Bug",
+    "baseStats": { "hp": 40, "atk": 50, "def": 30, "spd": 50 },
+    "moves": [
+      { "id": "gust", "name": "Gust", "power": 40, "type": "Flying", "pp": 35 },
+      { "id": "psybeam", "name": "Psybeam", "power": 65, "type": "Psychic", "pp": 20 },
+      { "id": "silverwind", "name": "Silver Wind", "power": 60, "type": "Bug", "pp": 5 },
+      { "id": "stunspore", "name": "Stun Spore", "power": 0, "type": "Grass", "pp": 30 }
+    ],
+    "evolution": []
+  },
+  {
+    "id": "dustox",
+    "name": "Dustox",
+    "type": "Bug",
+    "baseStats": { "hp": 40, "atk": 40, "def": 50, "spd": 40 },
+    "moves": [
+      { "id": "poisonpowder", "name": "Poison Powder", "power": 0, "type": "Poison", "pp": 35 },
+      { "id": "confusion", "name": "Confusion", "power": 50, "type": "Psychic", "pp": 25 },
+      { "id": "gust", "name": "Gust", "power": 40, "type": "Flying", "pp": 35 },
+      { "id": "toxic", "name": "Toxic", "power": 0, "type": "Poison", "pp": 10 }
+    ],
+    "evolution": []
+  },
+  {
+    "id": "ralts",
+    "name": "Ralts",
+    "type": "Psychic",
+    "baseStats": { "hp": 18, "atk": 20, "def": 15, "spd": 25 },
+    "moves": [
+      { "id": "confusion", "name": "Confusion", "power": 50, "type": "Psychic", "pp": 25 },
+      { "id": "growl", "name": "Growl", "power": 0, "type": "Normal", "pp": 40 }
+    ],
+    "evolution": [ { "level": 20, "to": "kirlia" } ]
+  },
+  {
+    "id": "kirlia",
+    "name": "Kirlia",
+    "type": "Psychic",
+    "baseStats": { "hp": 28, "atk": 35, "def": 25, "spd": 35 },
+    "moves": [
+      { "id": "confusion", "name": "Confusion", "power": 50, "type": "Psychic", "pp": 25 },
+      { "id": "calmmind", "name": "Calm Mind", "power": 0, "type": "Psychic", "pp": 20 },
+      { "id": "doubleteam", "name": "Double Team", "power": 0, "type": "Normal", "pp": 15 }
+    ],
+    "evolution": [ { "level": 30, "to": "gardevoir" } ]
+  },
+  {
+    "id": "gardevoir",
+    "name": "Gardevoir",
+    "type": "Psychic",
+    "baseStats": { "hp": 45, "atk": 65, "def": 55, "spd": 65 },
+    "moves": [
+      { "id": "psychic", "name": "Psychic", "power": 90, "type": "Psychic", "pp": 10 },
+      { "id": "moonblast", "name": "Moonblast", "power": 95, "type": "Fairy", "pp": 15 },
+      { "id": "shadowball", "name": "Shadow Ball", "power": 80, "type": "Ghost", "pp": 15 },
+      { "id": "calmmind", "name": "Calm Mind", "power": 0, "type": "Psychic", "pp": 20 }
+    ],
+    "evolution": []
+  },
+  {
+    "id": "wingull",
+    "name": "Wingull",
+    "type": "Water",
+    "baseStats": { "hp": 22, "atk": 20, "def": 18, "spd": 30 },
+    "moves": [
+      { "id": "watergun", "name": "Water Gun", "power": 40, "type": "Water", "pp": 25 },
+      { "id": "gust", "name": "Gust", "power": 40, "type": "Flying", "pp": 35 }
+    ],
+    "evolution": [ { "level": 25, "to": "pelipper" } ]
+  },
+  {
+    "id": "pelipper",
+    "name": "Pelipper",
+    "type": "Water",
+    "baseStats": { "hp": 45, "atk": 50, "def": 60, "spd": 40 },
+    "moves": [
+      { "id": "wingattack", "name": "Wing Attack", "power": 60, "type": "Flying", "pp": 25 },
+      { "id": "hydropump", "name": "Hydro Pump", "power": 110, "type": "Water", "pp": 5 },
+      { "id": "roost", "name": "Roost", "power": 0, "type": "Flying", "pp": 10 },
+      { "id": "protect", "name": "Protect", "power": 0, "type": "Normal", "pp": 10 }
+    ],
+    "evolution": []
+  },
+  {
+    "id": "taillow",
+    "name": "Taillow",
+    "type": "Flying",
+    "baseStats": { "hp": 20, "atk": 25, "def": 15, "spd": 30 },
+    "moves": [
+      { "id": "peck", "name": "Peck", "power": 35, "type": "Flying", "pp": 35 },
+      { "id": "growl", "name": "Growl", "power": 0, "type": "Normal", "pp": 40 }
+    ],
+    "evolution": [ { "level": 22, "to": "swellow" } ]
+  },
+  {
+    "id": "swellow",
+    "name": "Swellow",
+    "type": "Flying",
+    "baseStats": { "hp": 40, "atk": 50, "def": 30, "spd": 60 },
+    "moves": [
+      { "id": "aerialace", "name": "Aerial Ace", "power": 60, "type": "Flying", "pp": 20 },
+      { "id": "quickattack", "name": "Quick Attack", "power": 40, "type": "Normal", "pp": 30 },
+      { "id": "wingattack", "name": "Wing Attack", "power": 60, "type": "Flying", "pp": 25 },
+      { "id": "protect", "name": "Protect", "power": 0, "type": "Normal", "pp": 10 }
+    ],
+    "evolution": []
+  },
+  {
+    "id": "marill",
+    "name": "Marill",
+    "type": "Water",
+    "baseStats": { "hp": 25, "atk": 20, "def": 25, "spd": 20 },
+    "moves": [
+      { "id": "bubble", "name": "Bubble", "power": 40, "type": "Water", "pp": 30 },
+      { "id": "tackle", "name": "Tackle", "power": 40, "type": "Normal", "pp": 35 }
+    ],
+    "evolution": [ { "level": 18, "to": "azumarill" } ]
+  },
+  {
+    "id": "azumarill",
+    "name": "Azumarill",
+    "type": "Water",
+    "baseStats": { "hp": 50, "atk": 40, "def": 50, "spd": 40 },
+    "moves": [
+      { "id": "aquatail", "name": "Aqua Tail", "power": 90, "type": "Water", "pp": 10 },
+      { "id": "playrough", "name": "Play Rough", "power": 90, "type": "Fairy", "pp": 10 },
+      { "id": "waterfall", "name": "Waterfall", "power": 80, "type": "Water", "pp": 15 },
+      { "id": "protect", "name": "Protect", "power": 0, "type": "Normal", "pp": 10 }
+    ],
+    "evolution": []
+  },
+  {
+    "id": "poochyena",
+    "name": "Poochyena",
+    "type": "Dark",
+    "baseStats": { "hp": 22, "atk": 25, "def": 20, "spd": 25 },
+    "moves": [
+      { "id": "bite", "name": "Bite", "power": 60, "type": "Dark", "pp": 25 },
+      { "id": "howl", "name": "Howl", "power": 0, "type": "Normal", "pp": 40 }
+    ],
+    "evolution": [ { "level": 20, "to": "mightyena" } ]
+  },
+  {
+    "id": "mightyena",
+    "name": "Mightyena",
+    "type": "Dark",
+    "baseStats": { "hp": 45, "atk": 70, "def": 50, "spd": 60 },
+    "moves": [
+      { "id": "crunch", "name": "Crunch", "power": 80, "type": "Dark", "pp": 15 },
+      { "id": "suckerpunch", "name": "Sucker Punch", "power": 70, "type": "Dark", "pp": 5 },
+      { "id": "bite", "name": "Bite", "power": 60, "type": "Dark", "pp": 25 },
+      { "id": "protect", "name": "Protect", "power": 0, "type": "Normal", "pp": 10 }
+    ],
+    "evolution": []
+  }
+]

@@ -1,0 +1,11 @@
+[
+  { "id": "wurmple",   "chance": 0.28 },
+  { "id": "poochyena", "chance": 0.22 },
+  { "id": "taillow",   "chance": 0.20 },
+  { "id": "wingull",   "chance": 0.12 },
+  { "id": "marill",    "chance": 0.12 },
+  { "id": "ralts",     "chance": 0.03 },
+  { "id": "torchic",   "chance": 0.01 },
+  { "id": "mudkip",    "chance": 0.01 },
+  { "id": "treecko",   "chance": 0.01 }
+]
